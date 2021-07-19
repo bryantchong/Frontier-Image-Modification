@@ -31,15 +31,43 @@
 
 	<h1>Welcome</h1>
 	<p><input type="file"  accept="image/*" name="image" id="file"  onchange="loadFile(event)" style="display: none;"></p>
-<p><label for="file" style="cursor: pointer;">Upload Image</label></p>
-<p><img id="output" width="200" /></p>
+	<p><label for="file" style="cursor: pointer;">Upload Image</label></p>
+	<p><img id="output" width="200" /></p>
 
-<script>
-var loadFile = function(event) {
-	var image = document.getElementById('output');
-	image.src = URL.createObjectURL(event.target.files[0]);
-};
-</script>
+	<script>
+	var loadFile = function(event) {
+		var image = document.getElementById('output');
+		image.src = URL.createObjectURL(event.target.files[0]);
+	};
+	import java.io.File;
+	import java.io.IOException;
+	import java.awt.Color;
+	import java.awt.image.BufferedImage;
+	import javax.imageio.ImageIO;
+	public class SetPixels {
+  	 public static void main(String args[])throws IOException {
+    	  //Reading the image
+     	 File file= new File("D:\\Images\\cat.jpg");
+     	 BufferedImage img = ImageIO.read(file);
+      	for (int y = 0; y < img.getHeight(); y++) {
+      	   for (int x = 0; x < img.getWidth(); x++) {
+         	   //Retrieving contents of a pixel
+         	   int pixel = img.getRGB(x,y);
+         	   //Creating a Color object from pixel value
+         	   Color color = new Color(pixel, true);
+         	   //Retrieving the R G B values
+          	  int red = color.getRed();
+          	  int green = color.getGreen();
+           	 int blue = color.getBlue();
+           	 //Modifying the RGB values
+            	green = 150;
+           	 blue = 150;
+          	  //Creating new Color object
+           	 color = new Color(red, green, blue);
+          	  //Setting new Color object to the image
+           	 img.setRGB(x, y, color.getRGB());
+         }
+	</script>
 	<p>
 	If you want a navigation menu for your side column that looks like the one on thesitewizard.com,
 	you can generate your own and customize it, with the
