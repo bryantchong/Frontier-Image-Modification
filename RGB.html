@@ -45,27 +45,35 @@
 	import java.awt.image.BufferedImage;
 	import javax.imageio.ImageIO;
 	public class SetPixels {
-  	 public static void main(String args[])throws IOException {
-    	  //Reading the image
-     	 BufferedImage img = ImageIO.read(image);
-      	 for (int y = 0; y < img.getHeight(); y++) {
-      	 	for (int x = 0; x < img.getWidth(); x++) {
-         	   //Retrieving contents of a pixel
-         	   int pixel = img.getRGB(x,y);
-         	   //Creating a Color object from pixel value
-         	   Color color = new Color(pixel, true);
-         	   //Retrieving the R G B values
-          	  int red = color.getRed();
-          	  int green = color.getGreen();
+ 	  public static void main(String args[])throws IOException {
+  	    //Reading the image
+      	File file= new File(image);
+      	BufferedImage img = ImageIO.read(file);
+      	for (int y = 0; y < img.getHeight(); y++) {
+         	for (int x = 0; x < img.getWidth(); x++) {
+           	 //Retrieving contents of a pixel
+           	 int pixel = img.getRGB(x,y);
+           	 //Creating a Color object from pixel value
+           	 Color color = new Color(pixel, true);
+           	 //Retrieving the R G B values
+           	 int red = color.getRed();
+            	int green = color.getGreen();
            	 int blue = color.getBlue();
            	 //Modifying the RGB values
-            	green = 150;
+           	 green = 150;
            	 blue = 150;
-          	  //Creating new Color object
-           	 color = new Color(red, green, blue);
-          	  //Setting new Color object to the image
-           	 img.setRGB(x, y, color.getRGB());
-         }
+            	//Creating new Color object
+            	color = new Color(red, green, blue);
+            	//Setting new Color object to the image
+            	img.setRGB(x, y, color.getRGB());
+        	 }
+     	 }
+     	 //Saving the modified image
+     	 file = new File("D:\\Images\\setting_pixels.jpg");
+     	 ImageIO.write(img, "jpg", file);
+      	System.out.println("Done...");
+   }
+}
 	</script>
 	<p>
 	If you want a navigation menu for your side column that looks like the one on thesitewizard.com,
