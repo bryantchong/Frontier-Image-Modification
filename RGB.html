@@ -39,38 +39,43 @@
 		var image = document.getElementById('output');
 		image.src = URL.createObjectURL(event.target.files[0]);
 	};
-	import java.io.File;
-	import java.io.IOException;
-	import java.awt.Color;
-	import java.awt.image.BufferedImage;
-	import javax.imageio.ImageIO;
-	public class SetPixels {
- 	  public static void main(String args[])throws IOException {
-  	    //Reading the image
-      	File file= new File("image");
-      	BufferedImage img = ImageIO.read(file);
-      	for (int y = 0; y < img.getHeight(); y++) {
-         	for (int x = 0; x < img.getWidth(); x++) {
-           	 //Retrieving contents of a pixel
-           	 int pixel = img.getRGB(x,y);
-           	 //Creating a Color object from pixel value
-           	 Color color = new Color(pixel, true);
-           	 //Retrieving the R G B values
-           	 int red = color.getRed();
-            	int green = color.getGreen();
-           	 int blue = color.getBlue();
-           	 //Modifying the RGB values
-           	 green = 150;
-           	 blue = 150;
-            	//Creating new Color object
-            	color = new Color(red, green, blue);
-            	//Setting new Color object to the image
-            	img.setRGB(x, y, color.getRGB());
-        	 }
-     	 	}
-     	
- 	  }
-	}
+	function colorFilter()
+{
+  //Access the canvas
+  c = document.getElementById("canvas1"); 
+  context = c.getContext("2d");
+
+  //Declare variables
+  var imgData = context.getImageData(0,0,canvas1.width,canvas1.height);
+  var data = imgData.data;
+
+  var red = new Array();    
+  var green = new Array(); 
+  var blue = new Array(); 
+  var alpha = new Array();    
+
+  //Read image and make changes on the fly as it's read  
+  for (i = 0; i < data.length; i += 4) 
+  {                     
+    red[i] = imgData.data[i];
+    if (red[i] == 0) red[i] = 255; 
+    green[i] = imgData.data[i+1];
+    if (green[i] == 0) green[i] = 255;
+    blue[i] = imgData.data[i+2]; // no change, blue == 0 for black and for yellow
+    alpha[i] = imgData.data[i+3]; // Again, no change
+  } 
+
+  // Write the image back to the canvas
+  for (i = 0; i < data.length; i += 4)  
+  {
+    imgData.data[i] = red[i];
+    imgData.data[i+1] = green[i];
+    imgData.data[i+2] = blue[i]; 
+    imgData.data[i+3] = alpha[i];   
+  } 
+
+  context.putImageData(imgData, 0, 0);
+} 
 	</script>
 	<p>
 	If you want a navigation menu for your side column that looks like the one on thesitewizard.com,
