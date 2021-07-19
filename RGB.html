@@ -47,10 +47,9 @@
 	public class SetPixels {
   	 public static void main(String args[])throws IOException {
     	  //Reading the image
-     	 File file= new File("D:\\Images\\cat.jpg");
-     	 BufferedImage img = ImageIO.read(file);
-      	for (int y = 0; y < img.getHeight(); y++) {
-      	   for (int x = 0; x < img.getWidth(); x++) {
+     	 BufferedImage img = ImageIO.read(image);
+      	 for (int y = 0; y < img.getHeight(); y++) {
+      	 	for (int x = 0; x < img.getWidth(); x++) {
          	   //Retrieving contents of a pixel
          	   int pixel = img.getRGB(x,y);
          	   //Creating a Color object from pixel value
