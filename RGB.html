@@ -12,16 +12,40 @@
 <link rel="stylesheet" type="text/css" href="navbar.css" />
 <script src="simpleimage.js"></script>
 <script>
+var image;
+var file;
+var icanvas;
 function display(){
-	var icanvas= document.getElementById("canvas");
-	var file= document.getElementById("output");
-	var image= new SimpleImage(file);
+	icanvas= document.getElementById("canvas");
+	file= document.getElementById("output");
+	image= new SimpleImage(file);
+	original= new SimpleImage(file);
 	image.drawTo(icanvas);
 }
 function red(){
 	for (var pixels of image.values()){
 		pixels.setRed(255);
 	}
+	var icanvas= document.getElementById("canvas");
+	image.drawTo(icanvas);
+}
+function blue(){
+	for (var pixels of image.values()){
+		pixels.setBlue(255);
+	}
+	var icanvas= document.getElementById("canvas");
+	image.drawTo(icanvas);
+}
+function green(){
+	for (var pixels of image.values()){
+		pixels.setGreen(255);
+	}
+	var icanvas= document.getElementById("canvas");
+	image.drawTo(icanvas);
+}
+function reset(){
+	image= new SimpleImage(file);
+	image.drawTo(icanvas);
 }
 </script>
 </head>
@@ -47,6 +71,11 @@ function red(){
 	<canvas id="canvas" width="300" height="300"></canvas>
 	<p>
 		<input type="button" value="Make Red" onclick="red()">
+		<input type="button" value="Make Blue" onclick="blue()">
+		<input type="button" value="Make Green" onclick="green()">
+	</p>
+	<p>
+		<input type="button" value="Reset" onclick="reset()">
 	</p>
 	<p>
 	And if you want a contact form (ie, one that your visitors can use to reach you), go to the
