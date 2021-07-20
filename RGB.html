@@ -10,7 +10,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" type="text/css" media="all" href="styles.css">
 <link rel="stylesheet" type="text/css" href="navbar.css" />
-
+<script src="simpleimage.js"></script>
 </head>
 
 <body>
@@ -32,8 +32,6 @@
 	<h2>Change Red, Blue, Green values</h2>
 	<p><input type="file" accept="image/*" multiple="false" id="output"  onchange="display()"></p>
 	<canvas id="canvas" width="300" height="300"></canvas>
-
-	<script src="simpleimage.js"></script>
 	<script>
 	function display(){
 		var icanvas= document.getElementById("canvas");
