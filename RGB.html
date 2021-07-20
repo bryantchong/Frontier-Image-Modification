@@ -34,15 +34,15 @@
 	<p><canvas id="canvas" width="300" height="300"></canvas></p>
 
 	<script src="simpleimage.js">
-	function display{
-		var icanvas= document.getElementById("canvas");
+	function display(){
+		var icanvas= document.getElementById('canvas');
 		var file= document.getElementById("output");
 		var image= new SimpleImage(file);
 		image.drawTo(icanvas);
-	}
 	function red{
 		for (var pixels of image.values()){
 			pixels.setRed(255);
+
 		}
 	}
 	</script>
