@@ -31,11 +31,11 @@
 
 	<h2>Change Red, Blue, Green values</h2>
 	<p><input type="file" accept="image/*" multiple="false" id="output"  onchange="display()"></p>
-	<p><canvas id="canvas" width="300" height="300"></canvas></p>
+	<canvas id="canvas" width="300" height="300"></canvas>
 
 	<script src="simpleimage.js">
 	function display(){
-		var icanvas= document.getElementById('canvas');
+		var icanvas= document.getElementById("canvas");
 		var file= document.getElementById("output");
 		var image= new SimpleImage(file);
 		image.drawTo(icanvas);
