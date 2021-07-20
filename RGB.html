@@ -11,6 +11,19 @@
 <link rel="stylesheet" type="text/css" media="all" href="styles.css">
 <link rel="stylesheet" type="text/css" href="navbar.css" />
 <script src="simpleimage.js"></script>
+<script>
+function display(){
+	var icanvas= document.getElementById("canvas");
+	var file= document.getElementById("output");
+	var image= new SimpleImage(file);
+	image.drawTo(icanvas);
+}
+function red{
+	for (var pixels of image.values()){
+		pixels.setRed(255);
+	}
+}
+</script>
 </head>
 
 <body>
@@ -32,19 +45,6 @@
 	<h2>Change Red, Blue, Green values</h2>
 	<p><input type="file" accept="image/*" multiple="false" id="output"  onchange="display()"></p>
 	<canvas id="canvas" width="300" height="300"></canvas>
-	<script>
-	function display(){
-		var icanvas= document.getElementById("canvas");
-		var file= document.getElementById("output");
-		var image= new SimpleImage(file);
-		image.drawTo(icanvas);
-	}
-	function red{
-		for (var pixels of image.values()){
-			pixels.setRed(255);
-		}
-	}
-	</script>
 	<p>
 		<input type="button" value="Make Red" onclick="red()">
 	</p>
