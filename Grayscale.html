@@ -10,7 +10,29 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" type="text/css" media="all" href="styles.css">
 <link rel="stylesheet" type="text/css" href="navbar.css" />
-
+<script src="simpleimage.js"></script>
+<script>
+var image;
+var file;
+var icanvas;
+function display(){
+	icanvas= document.getElementById("canvas");
+	file= document.getElementById("output");
+	image= new SimpleImage(file);
+	original= new SimpleImage(file);
+	image.drawTo(icanvas);
+}
+function gray(){
+	for (var pixels of image.values()){
+		var grey= (pixels.getRed() + pixels.getBlue() + pixels.getGreen())/3;
+		pixels.setRed(grey);
+		pixels.setBlue(grey);
+		pixels.setGreen(grey);
+	}
+	var icanvas= document.getElementById("canvas");
+	image.drawTo(icanvas);
+}
+</script>
 </head>
 
 <body>
@@ -32,9 +54,10 @@
 	<!-- start of content column: insert your content here -->
 
 	<h1>Welcome</h1>
+	<p><input type="file" accept="image/*" multiple="false" id="output"  onchange="display()"></p>
+	<canvas id="canvas" width="300" height="300"></canvas>
 	<p>
-	Placeholder content. Replace everything here with your actual content.
-	</p>
+		<input type="button" value="Make Gray" onclick="gray()">
 	<p>
 	If you want a navigation menu for your side column that looks like the one on thesitewizard.com,
 	you can generate your own and customize it, with the
