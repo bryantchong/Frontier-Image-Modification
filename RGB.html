@@ -41,14 +41,14 @@
 		var image= new SimpleImage(file);
 		image.drawTo(canvas);
 	}
-
+	function red{
+		for (var pixels of image.values()){
+			pixels.setRed(255);
+		}
+	}
 	</script>
 	<p>
-	If you want a navigation menu for your side column that looks like the one on thesitewizard.com,
-	you can generate your own and customize it, with the
-	<a href="https://www.thesitewizard.com/wizards/css-menu-buttons.shtml">Navigation Menu Wizard</a>.
-	It's free, just like the <a href="https://www.thesitewizard.com/wizards/layout.shtml">Layout Wizard</a>
-	that you used to create this.
+		<input type="button" value"Make Red" onclick="red()">
 	</p>
 	<p>
 	And if you want a contact form (ie, one that your visitors can use to reach you), go to the
