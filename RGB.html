@@ -33,12 +33,12 @@
 	<p><input type="file" value="Upload" accept="image/*" multiple="false" name="image" id="file"  onchange="display()"></p>
 	<p><canvas id="canvas" width="300" height="300"></canvas></p>
 
-	<script type="text/javascript" src="simpleimage.js">
+	<script src="simpleimage.js">
 	function display{
-		var canvas= document.getElementById("canvas"); 
+		var icanvas= document.getElementById("canvas");
 		var file= document.getElementById("output");
 		var image= new SimpleImage(file);
-		image.drawTo(canvas);
+		image.drawTo(icanvas);
 	}
 	function red{
 		for (var pixels of image.values()){
