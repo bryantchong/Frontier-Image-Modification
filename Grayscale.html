@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 
-<title>Insert web page title here</title>
+<title>Grayscale</title>
 
 <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
 <meta http-equiv="Content-Style-Type" content="text/css">
@@ -39,6 +39,7 @@ function gray(){
 
 <div id="tswcontainer">
 	<div id="tswheader">
+		<h1> Grayscale </h1>
 	<!-- start of header section: insert your logo, etc, here -->
 
 	<p>
@@ -52,7 +53,7 @@ function gray(){
 	<div id="tswcontproper">
 	<!-- start of content column: insert your content here -->
 
-	<h1>Welcome</h1>
+	<h1>Make Gray</h1>
 	<p><input type="file" accept="image/*" multiple="false" id="output"  onchange="display()"></p>
 	<canvas id="canvas" width="300" height="300"></canvas>
 	<p>
@@ -60,7 +61,7 @@ function gray(){
 	<p>
 	</p>
 	<p>&nbsp;</p>
-
+  <p> Again, there is a file button that allows the user to upload any image they have on their computer. The Make Gray button below the image will simply apply a grayscale effect to the image. The Make Gray button is connected to a Javascript function that finds the average of the red, green, and blue values of an individual pixel. The red, green, and blue value of the pixel is then altered to be the average value from earlier. A for loop is used so that the average of every pixel is found and the rgb values of the pixels are all replaced.
 	<!-- end of content column: put your content above this line -->
 	</div>
 	</div>
