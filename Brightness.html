@@ -11,25 +11,7 @@
 <link rel="stylesheet" type="text/css" media="all" href="styles.css">
 <link rel="stylesheet" type="text/css" href="navbar.css" />
 <script src="simpleimage.js"></script>
-<script>
-var image;
-var file;
-var icanvas;
-function display(){
-	icanvas= document.getElementById("canvas");
-	file= document.getElementById("output");
-	image= new SimpleImage(file);
-	original= new SimpleImage(file);
-	image.drawTo(icanvas);
-}
-rangeInput = document.getElementById('range');
 
-container = document.getElementsByClassName('image')[0];
-
-rangeInput.addEventListener("mousemove",function(){
-container.style.filter = "brightness(" + rangeInput.value + "%)";
-});
-</script>
 </head>
 
 <body>
@@ -51,7 +33,9 @@ container.style.filter = "brightness(" + rangeInput.value + "%)";
 
 	<h1>Welcome</h1>
 	<p><input type="file" accept="image/*" multiple="false" id="output"  onchange="display()"></p>
+	<div class="container">
 	<canvas id="canvas" width="300" height="300"></canvas>
+  </div>
 	<p>
      <div class="brightness-box">
        <i class="far fa-sun"></i>
@@ -105,7 +89,25 @@ container.style.filter = "brightness(" + rangeInput.value + "%)";
 	<div style="clear: both;"></div>
 
 </div>
+<script>
+var image;
+var file;
+var icanvas;
+function display(){
+	icanvas= document.getElementById("canvas");
+	file= document.getElementById("output");
+	image= new SimpleImage(file);
+	original= new SimpleImage(file);
+	image.drawTo(icanvas);
+}
+rangeInput = document.getElementById('range');
 
+container = document.getElementById('canvas');
+
+rangeInput.addEventListener("mousemove",function(){
+container.style.filter = "brightness(" + rangeInput.value + "%)";
+});
+</script>
 </body>
 
 </html>
