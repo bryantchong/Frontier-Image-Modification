@@ -10,7 +10,26 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" type="text/css" media="all" href="styles.css">
 <link rel="stylesheet" type="text/css" href="navbar.css" />
+<script src="simpleimage.js"></script>
+<script>
+var image;
+var file;
+var icanvas;
+function display(){
+	icanvas= document.getElementById("canvas");
+	file= document.getElementById("output");
+	image= new SimpleImage(file);
+	original= new SimpleImage(file);
+	image.drawTo(icanvas);
+}
+rangeInput = document.getElementById('range');
 
+container = document.getElementsByClassName('image')[0];
+
+rangeInput.addEventListener("mousemove",function(){
+container.style.filter = "brightness(" + rangeInput.value + "%)";
+});
+</script>
 </head>
 
 <body>
@@ -31,7 +50,38 @@
 	<!-- start of content column: insert your content here -->
 
 	<h1>Welcome</h1>
+	<p><input type="file" accept="image/*" multiple="false" id="output"  onchange="display()"></p>
+	<canvas id="canvas" width="300" height="300"></canvas>
 	<p>
+<<<<<<< Updated upstream
+=======
+		<div class="container">
+     <div class="brightness-box">
+       <i class="far fa-sun"></i>
+       <input type="range" id="range" min="10" max="100" value="100">
+       <i class="fas fa-sun"></i>
+     </div>
+   </div>
+	</p>
+	<p>
+	If you want a navigation menu for your side column that looks like the one on thesitewizard.com,
+	you can generate your own and customize it, with the
+	<a href="https://www.thesitewizard.com/wizards/css-menu-buttons.shtml">Navigation Menu Wizard</a>.
+	It's free, just like the <a href="https://www.thesitewizard.com/wizards/layout.shtml">Layout Wizard</a>
+	that you used to create this.
+	</p>
+	<p>
+	And if you want a contact form (ie, one that your visitors can use to reach you), go to the
+	<a href="https://www.thesitewizard.com/wizards/feedbackform.shtml">Feedback Form Wizard</a>
+	to create one. Yes, it's free too.
+	</p>
+	<p>
+	Okay, that's it. I've run out of meaningful things to say for this placeholder content, and can't be bothered to
+	think up any more stuff that you're just going to delete anyway.
+	</p>
+	<p>
+	All the best for your site!
+>>>>>>> Stashed changes
 	</p>
 	<p>&nbsp;</p>
 
