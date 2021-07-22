@@ -36,9 +36,10 @@ function gray(){
 </head>
 
 <body>
-
-<div id="tswcontainer">
-	<div id="tswheader">
+	<input type="checkbox" id="side" name="" value="">
+	<div class="page-wrap">
+  <div class="page-content">
+    <label for="side" class="toggle">☰</label>
 		<h1 class="center"> Grayscale </h1>
 	<!-- start of header section: insert your logo, etc, here -->
 
@@ -47,10 +48,6 @@ function gray(){
 	<p>&nbsp;</p>
 
 	<!-- end of header section: insert your logo, etc, above this line -->
-	</div>
-
-	<div id="tswcontent">
-	<div id="tswcontproper">
 	<!-- start of content column: insert your content here -->
 
 	<h2>Make Gray</h2>
@@ -69,13 +66,9 @@ function gray(){
   <p class="text"> Again, there is a file button that allows the user to upload any image they have on their computer. The Make Gray button below the image will simply apply a grayscale effect to the image. The Make Gray button is connected to a Javascript function that finds the average of the red, green, and blue values of an individual pixel. The red, green, and blue value of the pixel is then altered to be the average value from earlier. A for loop is used so that the average of every pixel is found and the rgb values of the pixels are all replaced.
 	<!-- end of content column: put your content above this line -->
 	</div>
-	</div>
-
-	<div id="tswsidecol">
-	<div id="tswsideproper">
 	<!-- start of side column: insert your navigation menu, etc, here -->
 
-	<div id="tswcssbuttons">
+	<div class="sidebar">
 	<ul>
 	<li><a href="Home.html">Home</a></li>
 	<li><a href="RGB.html">RGB</a></li>
@@ -86,10 +79,6 @@ function gray(){
 
 
 	<!-- end of side column: put your navigation menu, etc, above this line -->
-	</div>
-	</div>
-	<div style="clear: both;"></div>
-
 </div>
 
 </body>
