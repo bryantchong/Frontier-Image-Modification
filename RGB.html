@@ -67,20 +67,20 @@ function reset(){
 	<!-- start of content column: insert your content here -->
 
 	<h2>Change Red, Blue, Green Values</h2>
-	<p><input type="file" accept="image/*" multiple="false" id="output"  onchange="display()"></p>
+	<p> <input type="file" accept="image/*"multiple="false" id="output" id="file_btn"  onchange="display()" class="btn btn-1 btn-1f" /></p>
 	<canvas id="canvas" width="300" height="300"></canvas>
 	<p>
-		<input type="button" value="Make Red" onclick="red()">
-		<input type="button" value="Make Blue" onclick="blue()">
-		<input type="button" value="Make Green" onclick="green()">
+		<input type="button" value="Make Red" onclick="red()" class="btn btn-1 btn-1f">
+		<input type="button" value="Make Blue" onclick="blue()" class="btn btn-1 btn-1f">
+		<input type="button" value="Make Green" onclick="green()" class="btn btn-1 btn-1f">
 	</p>
 	<p>
-		<input type="button" value="Reset" onclick="reset()">
+		<input type="button" value="Reset" onclick="reset()" class="btn btn-1 btn-1f">
 	</p>
 	<p>
 	</p>
 	<p>&nbsp;</p>
-	<p> On this page, a file button on the top allows the user to choose any image that they have downloaded. Below the images are several buttons that change every individual pixel in the image. The Make Red button will set every pixel in the image to have a red value of 255, the Make Blue button sets every pixel to a blue value of 255, and the Make Green button sets every pixel to a green value of 255. The user can make different color filters by pressing different buttons together. The reset button will reset the image so that the color filter will disappear.
+	<p class="text"> On this page, a file button on the top allows the user to choose any image that they have downloaded. Below the images are several buttons that change every individual pixel in the image. The Make Red button will set every pixel in the image to have a red value of 255, the Make Blue button sets every pixel to a blue value of 255, and the Make Green button sets every pixel to a green value of 255. The user can make different color filters by pressing different buttons together. The reset button will reset the image so that the color filter will disappear.</p>
 	<!-- end of content column: put your content above this line -->
 	</div>
 	</div>
