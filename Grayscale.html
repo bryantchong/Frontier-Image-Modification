@@ -39,7 +39,7 @@ function gray(){
 
 <div id="tswcontainer">
 	<div id="tswheader">
-		<h1> Grayscale </h1>
+		<h1 class="center"> Grayscale </h1>
 	<!-- start of header section: insert your logo, etc, here -->
 
 	<p>
@@ -53,15 +53,20 @@ function gray(){
 	<div id="tswcontproper">
 	<!-- start of content column: insert your content here -->
 
-	<h1>Make Gray</h1>
-	<p><input type="file" accept="image/*" multiple="false" id="output"  onchange="display()"></p>
+	<h2>Make Gray</h2>
+	<p>
+		 <input type="file" accept="image/*"multiple="false" id="output" id="file_btn"  onchange="display()" class="btn btn-1 btn-1f" />
+	 </p>
 	<canvas id="canvas" width="300" height="300"></canvas>
 	<p>
-		<input type="button" value="Make Gray" onclick="gray()">
+		<button onclick="gray()" class="btn btn-1 btn-1f">
+			Make Gray
+		</button>
+
 	<p>
 	</p>
 	<p>&nbsp;</p>
-  <p> Again, there is a file button that allows the user to upload any image they have on their computer. The Make Gray button below the image will simply apply a grayscale effect to the image. The Make Gray button is connected to a Javascript function that finds the average of the red, green, and blue values of an individual pixel. The red, green, and blue value of the pixel is then altered to be the average value from earlier. A for loop is used so that the average of every pixel is found and the rgb values of the pixels are all replaced.
+  <p class="text"> Again, there is a file button that allows the user to upload any image they have on their computer. The Make Gray button below the image will simply apply a grayscale effect to the image. The Make Gray button is connected to a Javascript function that finds the average of the red, green, and blue values of an individual pixel. The red, green, and blue value of the pixel is then altered to be the average value from earlier. A for loop is used so that the average of every pixel is found and the rgb values of the pixels are all replaced.
 	<!-- end of content column: put your content above this line -->
 	</div>
 	</div>
