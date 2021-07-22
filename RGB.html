@@ -51,22 +51,19 @@ function reset(){
 </head>
 
 <body>
-
-<div id="tswcontainer">
-	<div id="tswheader" class="center">
-		<h1> RGB </h1>
+	<input type="checkbox" id="side" name="" value="">
+	<div class="page-wrap">
+  <div class="page-content">
+    <label for="side" class="toggle">☰</label>
+		<h1 class="center"> RGB </h1>
 	<!-- start of header section: insert your logo, etc, here -->
 
 	<p>&nbsp;</p>
 
 	<!-- end of header section: insert your logo, etc, above this line -->
-	</div>
-
-	<div id="tswcontent">
-	<div id="tswcontproper">
 	<!-- start of content column: insert your content here -->
 
-	<h2>Change Red, Blue, Green Values</h2>
+	<h2>Change Red, Green, Blue Values</h2>
 	<p> <input type="file" accept="image/*"multiple="false" id="output" id="file_btn"  onchange="display()" class="btn btn-1 btn-1f" /></p>
 	<canvas id="canvas" width="300" height="300"></canvas>
 	<p>
@@ -81,30 +78,23 @@ function reset(){
 	</p>
 	<p>&nbsp;</p>
 	<p class="text"> On this page, a file button on the top allows the user to choose any image that they have downloaded. Below the images are several buttons that change every individual pixel in the image. The Make Red button will set every pixel in the image to have a red value of 255, the Make Blue button sets every pixel to a blue value of 255, and the Make Green button sets every pixel to a green value of 255. The user can make different color filters by pressing different buttons together. The reset button will reset the image so that the color filter will disappear.</p>
+
 	<!-- end of content column: put your content above this line -->
 	</div>
-	</div>
-
-	<div id="tswsidecol">
-	<div id="tswsideproper">
 	<!-- start of side column: insert your navigation menu, etc, here -->
-
-	<div id="tswcssbuttons">
-	<ul>
-	<li><a href="home.html">Home</a></li>
-	<li><a href="RGB.html">RGB</a></li>
-	<li><a href="Grayscale.html">Grayscale</a></li>
-	<li><a href="Brightness.html">Brightness</a></li>
-	</ul>
-	</div>
+	<div class="sidebar">
+	  <ul>
+			<ul>
+			<li><a href="home.html">Home</a></li>
+			<li><a href="RGB.html">RGB</a></li>
+			<li><a href="Grayscale.html">Grayscale</a></li>
+			<li><a href="Brightness.html">Brightness</a></li>
+			</ul>
+	  </div>
 
 
 	<!-- end of side column: put your navigation menu, etc, above this line -->
 	</div>
-	</div>
-	<div style="clear: both;"></div>
-
-</div>
 
 </body>
 
