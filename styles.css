@@ -87,6 +87,14 @@ div#tswheader {
 	-moz-transition: all 0.3s;
 	transition: all 0.3s;
 }
+.btn:after {
+	content: '';
+	position: absolute;
+	z-index: -1;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	transition: all 0.3s;
+}
 .btn-1 {
 	border: 3px solid #fff;
 	color: #fff;
